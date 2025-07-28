@@ -55,6 +55,7 @@ bash ./configure \
     --with-extra-cxxflags="$CFLAGS" \
     --with-extra-ldflags="$LDFLAGS" \
     --disable-precompiled-headers \
+    --with-toolchain-type=clang \
     --disable-warnings-as-errors \
     --enable-option-checking=fatal \
     --enable-headless-only=yes \
