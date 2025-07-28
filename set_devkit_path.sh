@@ -1,4 +1,4 @@
-export NDK_VERSION=r21
+export NDK_VERSION=r27d
 
 if [[ -z "$BUILD_FREETYPE_VERSION" ]]
 then
@@ -42,11 +42,14 @@ export LDFLAGS="-L$NDK/platforms/android-$API/arch-$TARGET_SHORT/usr/lib"
 export thecc=$TOOLCHAIN/bin/${TARGET}${API}-clang
 export thecxx=$TOOLCHAIN/bin/${TARGET}${API}-clang++
 
+export ANDROID_NDK=$PWD/android-ndk-$NDK_VERSION
+export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
+
 # Configure and build.
 export AR=$TOOLCHAIN/bin/llvm-ar
 export AS=$TOOLCHAIN/bin/llvm-as
-export CC=$PWD/android-wrapped-clang
-export CXX=$PWD/android-wrapped-clang++
+export CC=aarch64-linux-android21-clang
+export CXX=aarch64-linux-android21-clang++
 export LD=$TOOLCHAIN/bin/ld
 export OBJCOPY=$TOOLCHAIN/bin/llvm-objcopy
 export RANLIB=$TOOLCHAIN/bin/llvm-ranlib

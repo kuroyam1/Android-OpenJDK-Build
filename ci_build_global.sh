@@ -16,14 +16,6 @@ NDK_VERSION=r27d
 wget -nc -nv -O android-ndk-$NDK_VERSION-linux-x86_64.zip \
   "https://dl.google.com/android/repository/android-ndk-r27d-linux.zip"
 
-unzip -o -q android-ndk-$NDK_VERSION-linux-x86_64.zip
-
-export ANDROID_NDK=$PWD/android-ndk-$NDK_VERSION
-export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
-
-# Test compiler
-aarch64-linux-android21-clang --version
-
 sudo chmod 777 extract_ndk.sh
 sudo chmod 777 get_boot_jdk.sh
 sudo chmod 777 get_libs.sh
